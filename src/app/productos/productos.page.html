@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button (click)="toAdd()" expand="block">
+    Agregar Producto
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let p of productos">
+      <ion-label>
+        <h2>{{ p.nombre }}</h2>
+        <p>Precio: ${{ p.precio }}</p>
+        <p>Stock: {{ p.stock }}</p>
+      </ion-label>
+
+      <ion-button color="danger" (click)="eliminar(p.id)" slot="end">
+        Eliminar
+      </ion-button>
+      <ion-button fill="clear" color="primary" (click)="editar(p.id)" slot="end">
+        Editar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

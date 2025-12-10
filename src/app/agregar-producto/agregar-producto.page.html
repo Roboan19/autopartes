@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Nombre -->
+  <ion-item>
+    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <p *ngIf="errorNombre" class="error">El nombre es obligatorio</p>
+
+  <!-- Precio -->
+  <ion-item>
+    <ion-input type="number" placeholder="Precio" [(ngModel)]="precio"></ion-input>
+  </ion-item>
+  <p *ngIf="errorPrecio" class="error">El precio debe ser mayor a 0</p>
+
+  <!-- Stock -->
+  <ion-item>
+    <ion-input type="number" placeholder="Stock" [(ngModel)]="stock"></ion-input>
+  </ion-item>
+  <p *ngIf="errorStock" class="error">El stock no puede ser negativo</p>
+
+  <ion-button expand="block" (click)="agregar()">
+    Guardar
+  </ion-button>
+
+  <ion-toast [isOpen]="showToast" message="Producto guardado correctamente" duration="1500" color="success"
+    position="top" (didDismiss)="showToast = false">
+  </ion-toast>
+</ion-content>

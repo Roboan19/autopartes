@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ventas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-select placeholder="Seleccionar producto" [(ngModel)]="productoSeleccionado">
+      <ion-select-option *ngFor="let p of productos" [value]="p">
+        {{ p.nombre }} (Stock: {{ p.stock }})
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" placeholder="Cantidad" [(ngModel)]="cantidad"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="realizarVenta()">
+    Registrar Venta
+  </ion-button>
+
+</ion-content>

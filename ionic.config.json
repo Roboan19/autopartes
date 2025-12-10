@@ -1,0 +1,7 @@
+{
+  "name": "autopartes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" placeholder="Precio" [(ngModel)]="precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" placeholder="Stock" [(ngModel)]="stock"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="guardar()">
+    Guardar Cambios
+  </ion-button>
+
+</ion-content>
